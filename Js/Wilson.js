@@ -36,3 +36,16 @@ function amIWilson(p) {
     }
     return x * factorial(x - 1n)
 }
+
+// Another
+
+function factorial(x) {
+    if (x < 0n) return NaN
+    if (x <= 1n) return 1n
+    return x * factorial(x - 1n)
+}
+
+function amIWilson(p) {
+    p = BigInt(p)
+    return !((factorial(p - 1n) + 1n) % (p * p))
+}
